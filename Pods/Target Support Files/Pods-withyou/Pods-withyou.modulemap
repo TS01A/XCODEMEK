@@ -1,0 +1,6 @@
+framework module Pods_withyou {
+  umbrella header "Pods-withyou-umbrella.h"
+
+  export *
+  module * { export * }
+}

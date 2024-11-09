@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E8D4938EF1ECDA2B491F54A9 /* Pods_withyou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0A897AB9ABDD6E08B31F36 /* Pods_withyou.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		8D0A897AB9ABDD6E08B31F36 /* Pods_withyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_withyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A82988F908459E7464B6890D /* Pods-withyou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-withyou.release.xcconfig"; path = "Target Support Files/Pods-withyou/Pods-withyou.release.xcconfig"; sourceTree = "<group>"; };
 		B8A657992CDE6A5E00D4098E /* withyou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = withyou.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DADEB8371D46497705EC710F /* Pods-withyou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-withyou.debug.xcconfig"; path = "Target Support Files/Pods-withyou/Pods-withyou.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8D4938EF1ECDA2B491F54A9 /* Pods_withyou.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18CA37EB49E97A5E1C7137F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DADEB8371D46497705EC710F /* Pods-withyou.debug.xcconfig */,
+				A82988F908459E7464B6890D /* Pods-withyou.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9A60AA1B3312B58B10457CD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D0A897AB9ABDD6E08B31F36 /* Pods_withyou.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B8A657902CDE6A5E00D4098E = {
 			isa = PBXGroup;
 			children = (
 				B8A6579B2CDE6A5E00D4098E /* withyou */,
 				B8A6579A2CDE6A5E00D4098E /* Products */,
+				18CA37EB49E97A5E1C7137F8 /* Pods */,
+				9A60AA1B3312B58B10457CD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8A657AC2CDE6A5F00D4098E /* Build configuration list for PBXNativeTarget "withyou" */;
 			buildPhases = (
+				18D5457BE2B423275CACDD1C /* [CP] Check Pods Manifest.lock */,
 				B8A657952CDE6A5E00D4098E /* Sources */,
 				B8A657962CDE6A5E00D4098E /* Frameworks */,
 				B8A657972CDE6A5E00D4098E /* Resources */,
+				A867C2DC6169D26ADD20CA2E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				B8A6579B2CDE6A5E00D4098E /* withyou */,
 			);
 			name = withyou;
-			packageProductDependencies = (
-			);
 			productName = withyou;
 			productReference = B8A657992CDE6A5E00D4098E /* withyou.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +154,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18D5457BE2B423275CACDD1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-withyou-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A867C2DC6169D26ADD20CA2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-withyou/Pods-withyou-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-withyou/Pods-withyou-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-withyou/Pods-withyou-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B8A657952CDE6A5E00D4098E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,11 +209,13 @@
 /* Begin XCBuildConfiguration section */
 		B8A657AD2CDE6A5F00D4098E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DADEB8371D46497705EC710F /* Pods-withyou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = withyou/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -167,11 +238,13 @@
 		};
 		B8A657AE2CDE6A5F00D4098E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A82988F908459E7464B6890D /* Pods-withyou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = withyou/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

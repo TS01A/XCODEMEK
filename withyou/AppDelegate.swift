@@ -5,32 +5,40 @@
 //  Created by Abdullah on 06/05/1446 AH.
 //
 
+//
+//  AppDelegate.swift
+//  withyou
+//
+//  Created by Abdullah on 06/05/1446 AH.
+//
+
 import UIKit
+import Firebase // استيراد Firebase إذا كنت تستخدمه
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    // يتم استدعاء هذه الدالة عند اكتمال إطلاق التطبيق
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // تهيئة Firebase إذا كنت تستخدمه
+        FirebaseApp.configure()
+        
+        // نقطة التهيئة الرئيسية للتطبيق بعد الإطلاق
+        print("Application did finish launching")
         return true
     }
 
     // MARK: UISceneSession Lifecycle
 
+    // يتم استدعاء هذه الدالة عند إنشاء جلسة جديدة (Scene Session)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
+        // تكوين الجلسة باستخدام الإعداد الافتراضي
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
+    // يتم استدعاء هذه الدالة عند حذف جلسات (Scene Sessions)
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+        // تحرير أي موارد مرتبطة بجلسات تم حذفها.
+        print("Scene sessions discarded: \(sceneSessions)")
     }
-
-
 }
-
