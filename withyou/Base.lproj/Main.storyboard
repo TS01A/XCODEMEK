@@ -3,6 +3,7 @@
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,6 +25,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="HB2-zm-VCs">
                                         <rect key="frame" x="20" y="0.0" width="362" height="34"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -38,7 +40,6 @@
                                         <buttonConfiguration key="configuration" style="plain" title="تسجيل الدخول"/>
                                         <connections>
                                             <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bd7-0E-HSg"/>
-                                            <segue destination="i90-Od-e6t" kind="show" identifier="LogintoList" id="lxa-ae-5jh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jch-xI-Gx5">
@@ -83,11 +84,12 @@
                         <outlet property="emailText" destination="HB2-zm-VCs" id="ahe-cx-LiM"/>
                         <outlet property="passwordText" destination="IKP-R4-DXX" id="edI-Sn-y9b"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="DuZ-bQ-BhH"/>
+                        <segue destination="i90-Od-e6t" kind="show" identifier="LogintoList" id="Vwq-Ct-BGc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2935.1145038167938" y="5.6338028169014089"/>
+            <point key="canvasLocation" x="2551" y="5"/>
         </scene>
         <!--تحدياتي-->
         <scene sceneID="Y90-Ga-3id">
@@ -103,23 +105,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nU7-dG-yKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4624" y="51"/>
+            <point key="canvasLocation" x="4851" y="765"/>
         </scene>
         <!--اقرب عيادة-->
         <scene sceneID="wPQ-so-Ghv">
             <objects>
-                <viewController id="8O2-DY-bRP" sceneMemberID="viewController">
+                <viewController id="8O2-DY-bRP" customClass="Googlemap" customModule="withyou" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HNC-Ns-bIO">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="864"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3U-9x-hsw">
+                                <rect key="frame" x="0.0" y="0.0" width="402" height="815"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Hlz-Ji-gmW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="r3U-9x-hsw" secondAttribute="trailing" id="IPS-tu-9PN"/>
+                            <constraint firstAttribute="bottom" secondItem="r3U-9x-hsw" secondAttribute="bottom" id="Plk-TI-zhe"/>
+                            <constraint firstItem="r3U-9x-hsw" firstAttribute="top" secondItem="HNC-Ns-bIO" secondAttribute="top" id="eTj-hZ-aHn"/>
+                            <constraint firstItem="r3U-9x-hsw" firstAttribute="leading" secondItem="HNC-Ns-bIO" secondAttribute="leading" id="vLf-i9-ZYF"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="اقرب عيادة" image="10218867_hospital_location_map_pin_healthcare_icon" id="x9j-fs-iVM"/>
+                    <connections>
+                        <outlet property="mapView" destination="r3U-9x-hsw" id="Px3-rh-9CX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLX-pM-rQf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4624" y="749"/>
+            <point key="canvasLocation" x="3714.9253731343283" y="764.75972540045757"/>
         </scene>
         <!--حسابي-->
         <scene sceneID="phr-72-Pwj">
@@ -135,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DZe-iq-xdb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4624" y="1431"/>
+            <point key="canvasLocation" x="2664" y="765"/>
         </scene>
         <!--Home-->
         <scene sceneID="R2b-nQ-HRo">
@@ -200,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vO0-pw-mz4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4623.6641221374048" y="-644.36619718309862"/>
+            <point key="canvasLocation" x="4851" y="5"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="0LA-Oi-l5z">
