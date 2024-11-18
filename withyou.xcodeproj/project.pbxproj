@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B89B2F9F2CE7024800CC3C99 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89B2F9E2CE7024800CC3C99 /* CoreLocation.framework */; };
 		E8D4938EF1ECDA2B491F54A9 /* Pods_withyou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0A897AB9ABDD6E08B31F36 /* Pods_withyou.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8D0A897AB9ABDD6E08B31F36 /* Pods_withyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_withyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82988F908459E7464B6890D /* Pods-withyou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-withyou.release.xcconfig"; path = "Target Support Files/Pods-withyou/Pods-withyou.release.xcconfig"; sourceTree = "<group>"; };
-		B89B2F9E2CE7024800CC3C99 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B8A657992CDE6A5E00D4098E /* withyou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = withyou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DADEB8371D46497705EC710F /* Pods-withyou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-withyou.debug.xcconfig"; path = "Target Support Files/Pods-withyou/Pods-withyou.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B89B2F9F2CE7024800CC3C99 /* CoreLocation.framework in Frameworks */,
 				E8D4938EF1ECDA2B491F54A9 /* Pods_withyou.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +62,6 @@
 		9A60AA1B3312B58B10457CD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B89B2F9E2CE7024800CC3C99 /* CoreLocation.framework */,
 				8D0A897AB9ABDD6E08B31F36 /* Pods_withyou.framework */,
 			);
 			name = Frameworks;
@@ -219,7 +215,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4W3RWD6AWJ;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = withyou/Info.plist;
@@ -249,7 +244,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4W3RWD6AWJ;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = withyou/Info.plist;

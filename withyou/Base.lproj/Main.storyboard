@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i90-Od-e6t">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
-        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -110,29 +109,41 @@
         <!--اقرب عيادة-->
         <scene sceneID="wPQ-so-Ghv">
             <objects>
-                <viewController id="8O2-DY-bRP" customClass="Googlemap" customModule="withyou" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8O2-DY-bRP" customClass="ViewControllerGoogleMap" customModule="withyou" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HNC-Ns-bIO">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="864"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3U-9x-hsw">
-                                <rect key="frame" x="0.0" y="0.0" width="402" height="815"/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nearHospital" translatesAutoresizingMaskIntoConstraints="NO" id="H3T-Hb-7kT">
+                                <rect key="frame" x="-12" y="-58" width="424" height="200"/>
+                            </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7t2-UM-qdE">
+                                <rect key="frame" x="12" y="378" width="378" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="SAl-Ug-yp3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <backgroundConfiguration key="background" image="BTN1GoToHOSP"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="BTNgotomap:" destination="8O2-DY-bRP" eventType="touchUpInside" id="cEI-7v-XqP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hlz-Ji-gmW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="r3U-9x-hsw" secondAttribute="trailing" id="IPS-tu-9PN"/>
-                            <constraint firstAttribute="bottom" secondItem="r3U-9x-hsw" secondAttribute="bottom" id="Plk-TI-zhe"/>
-                            <constraint firstItem="r3U-9x-hsw" firstAttribute="top" secondItem="HNC-Ns-bIO" secondAttribute="top" id="eTj-hZ-aHn"/>
-                            <constraint firstItem="r3U-9x-hsw" firstAttribute="leading" secondItem="HNC-Ns-bIO" secondAttribute="leading" id="vLf-i9-ZYF"/>
+                            <constraint firstItem="H3T-Hb-7kT" firstAttribute="top" secondItem="HNC-Ns-bIO" secondAttribute="top" constant="-58" id="78a-o8-GKu"/>
+                            <constraint firstItem="7t2-UM-qdE" firstAttribute="centerX" secondItem="HNC-Ns-bIO" secondAttribute="centerX" id="9ra-68-8N1"/>
+                            <constraint firstItem="Hlz-Ji-gmW" firstAttribute="bottom" secondItem="H3T-Hb-7kT" secondAttribute="bottom" constant="673" id="IWM-GS-dWk"/>
+                            <constraint firstItem="Hlz-Ji-gmW" firstAttribute="bottom" secondItem="7t2-UM-qdE" secondAttribute="bottom" constant="307" id="JkL-Kv-YS8"/>
+                            <constraint firstItem="7t2-UM-qdE" firstAttribute="leading" secondItem="Hlz-Ji-gmW" secondAttribute="leading" constant="12" id="OU3-1v-oUP"/>
+                            <constraint firstAttribute="trailing" secondItem="H3T-Hb-7kT" secondAttribute="trailing" constant="-10" id="a0M-Ap-7Ja"/>
+                            <constraint firstItem="H3T-Hb-7kT" firstAttribute="leading" secondItem="HNC-Ns-bIO" secondAttribute="leading" constant="-12" id="fjp-ZF-z2n"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="اقرب عيادة" image="10218867_hospital_location_map_pin_healthcare_icon" id="x9j-fs-iVM"/>
-                    <connections>
-                        <outlet property="mapView" destination="r3U-9x-hsw" id="Px3-rh-9CX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLX-pM-rQf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,33 +174,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="آهــلاً بـــك " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hV1-yI-3ad">
-                                <rect key="frame" x="300" y="99" width="77" height="21"/>
+                                <rect key="frame" x="300" y="92" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twopng" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-4L-ran">
-                                <rect key="frame" x="-38" y="128" width="468" height="97"/>
+                                <rect key="frame" x="-38" y="121" width="468" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="tKi-Et-AOW"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjr-6x-xN4">
-                                <rect key="frame" x="221" y="233" width="146" height="124"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="9qE-MZ-FcM"/>
-                                    <constraint firstAttribute="height" constant="124" id="AvY-cs-eqC"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="">
-                                    <backgroundConfiguration key="background" image="BTNFull" imageContentMode="scaleToFill"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="arb-ri-MpE" kind="presentation" id="AiS-UB-yGH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yb-J4-leB">
-                                <rect key="frame" x="32" y="233" width="145" height="124"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yb-J4-leB">
+                                <rect key="frame" x="390" y="387" width="0.0" height="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="">
                                     <backgroundConfiguration key="background" image="BTNFull" imageContentMode="scaleToFill"/>
@@ -197,38 +194,73 @@
                                     <color key="baseForegroundColor" red="0.26337942149999999" green="0.56849879879999998" blue="0.67774856210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                             </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="TopLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N75-be-7Zh">
+                                <rect key="frame" x="12" y="422" width="378" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="WjR-8F-31r"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <backgroundConfiguration key="background" cornerRadius="30" image="BTNardTM"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inm-uv-1vx">
+                                <rect key="frame" x="12" y="280" width="378" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="pfw-Mc-PNc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <backgroundConfiguration key="background" cornerRadius="30" image="BTNvideoard"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTg-q3-G5e">
+                                <rect key="frame" x="12" y="564" width="378" height="122"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <backgroundConfiguration key="background" cornerRadius="30" image="BTNpaperARD"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZyC-62-hFQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ZyC-62-hFQ" firstAttribute="bottom" secondItem="WTg-q3-G5e" secondAttribute="bottom" constant="129" id="0uY-bm-gpw"/>
+                            <constraint firstItem="inm-uv-1vx" firstAttribute="trailing" secondItem="4yb-J4-leB" secondAttribute="trailing" id="51m-eY-C5c"/>
+                            <constraint firstItem="inm-uv-1vx" firstAttribute="top" secondItem="SKC-4L-ran" secondAttribute="bottom" constant="62" id="5a4-mF-H7C"/>
                             <constraint firstItem="hV1-yI-3ad" firstAttribute="leading" secondItem="ZyC-62-hFQ" secondAttribute="leading" constant="300" id="6Fx-WO-PVi"/>
-                            <constraint firstItem="Rjr-6x-xN4" firstAttribute="top" secondItem="4yb-J4-leB" secondAttribute="top" id="Bfy-nl-UWd"/>
+                            <constraint firstItem="ZyC-62-hFQ" firstAttribute="trailing" secondItem="N75-be-7Zh" secondAttribute="trailing" constant="12" id="Bh4-46-VI4"/>
+                            <constraint firstItem="ZyC-62-hFQ" firstAttribute="trailing" secondItem="inm-uv-1vx" secondAttribute="trailing" constant="12" id="CnE-SW-I2l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SKC-4L-ran" secondAttribute="trailing" constant="-44" id="FFF-kg-QnP"/>
+                            <constraint firstItem="N75-be-7Zh" firstAttribute="top" secondItem="inm-uv-1vx" secondAttribute="bottom" constant="12" id="HWi-6X-aIc"/>
+                            <constraint firstItem="WTg-q3-G5e" firstAttribute="leading" secondItem="ZyC-62-hFQ" secondAttribute="leading" constant="12" id="K1c-4C-kis"/>
                             <constraint firstItem="SKC-4L-ran" firstAttribute="top" secondItem="hV1-yI-3ad" secondAttribute="bottom" constant="8" id="Kbu-Bu-2UK"/>
-                            <constraint firstItem="ZyC-62-hFQ" firstAttribute="bottom" secondItem="Rjr-6x-xN4" secondAttribute="bottom" constant="458" id="Nfx-Z5-e0i"/>
+                            <constraint firstItem="ZyC-62-hFQ" firstAttribute="trailing" secondItem="N75-be-7Zh" secondAttribute="trailing" constant="12" id="N2K-UC-fIh"/>
                             <constraint firstItem="SKC-4L-ran" firstAttribute="leading" secondItem="LRx-Nd-xIT" secondAttribute="leadingMargin" constant="-54" id="Pdb-hy-77i"/>
-                            <constraint firstItem="Rjr-6x-xN4" firstAttribute="leading" secondItem="4yb-J4-leB" secondAttribute="trailing" constant="44" id="Ubk-M3-MBy"/>
-                            <constraint firstItem="Rjr-6x-xN4" firstAttribute="top" secondItem="SKC-4L-ran" secondAttribute="bottom" constant="8" id="dxe-Ni-cGJ"/>
-                            <constraint firstItem="ZyC-62-hFQ" firstAttribute="trailing" secondItem="Rjr-6x-xN4" secondAttribute="trailing" constant="35" id="gLg-Q3-ncJ"/>
-                            <constraint firstItem="Rjr-6x-xN4" firstAttribute="bottom" secondItem="4yb-J4-leB" secondAttribute="bottom" id="khM-nP-eKa"/>
+                            <constraint firstItem="N75-be-7Zh" firstAttribute="leading" secondItem="ZyC-62-hFQ" secondAttribute="leading" constant="12" id="Y8b-gD-0fH"/>
+                            <constraint firstItem="ZyC-62-hFQ" firstAttribute="trailing" secondItem="WTg-q3-G5e" secondAttribute="trailing" constant="12" id="a61-Vg-YSJ"/>
+                            <constraint firstItem="4yb-J4-leB" firstAttribute="top" secondItem="LRx-Nd-xIT" secondAttribute="top" constant="387" id="bcz-hj-hI7"/>
+                            <constraint firstItem="hV1-yI-3ad" firstAttribute="top" secondItem="ZyC-62-hFQ" secondAttribute="top" constant="92" id="ceK-EY-vvz"/>
+                            <constraint firstItem="WTg-q3-G5e" firstAttribute="top" secondItem="N75-be-7Zh" secondAttribute="bottom" constant="12" id="iCh-Kd-iTA"/>
+                            <constraint firstItem="inm-uv-1vx" firstAttribute="leading" secondItem="ZyC-62-hFQ" secondAttribute="leading" constant="12" id="x7o-hp-hzJ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="326656_home_icon" id="jOS-P1-7Gn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vO0-pw-mz4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4851" y="5"/>
+            <point key="canvasLocation" x="4850.746268656716" y="4.805491990846682"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="0LA-Oi-l5z">
             <objects>
                 <viewController id="arb-ri-MpE" customClass="QuizViewController" customModule="withyou" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="voS-Bs-Qtm">
-                        <rect key="frame" x="0.0" y="0.0" width="402" height="864"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ov3-jK-gRt">
-                                <rect key="frame" x="0.0" y="235" width="402" height="394"/>
+                                <rect key="frame" x="0.0" y="240" width="402" height="394"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTD-O4-2Wg">
                                         <rect key="frame" x="0.0" y="0.0" width="402" height="49"/>
@@ -337,9 +369,14 @@
         <image name="1564531_chart_business_graph_statistics_icon" width="24" height="24"/>
         <image name="1564534_customer_man_user_account_profile_icon" width="24" height="24"/>
         <image name="326656_home_icon" width="24" height="24"/>
+        <image name="BTN1GoToHOSP" width="2400" height="1140"/>
         <image name="BTNFull" width="970" height="970"/>
+        <image name="BTNardTM" width="2400" height="1140"/>
+        <image name="BTNpaperARD" width="2400" height="1140"/>
+        <image name="BTNvideoard" width="2400" height="1140"/>
         <image name="Twopng" width="1920" height="1080"/>
         <image name="background" width="393.33334350585938" height="853.33331298828125"/>
+        <image name="nearHospital" width="2400" height="1140"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
