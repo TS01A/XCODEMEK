@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AccointViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:withyou.xcodeproj">
    </FileRef>
    <FileRef
