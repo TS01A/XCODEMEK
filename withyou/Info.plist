@@ -8,6 +8,9 @@
 	<string>يرجى السماح لنا بالوصول إلى موقعك لنظهر لك العيادات القريبة</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>نحتاج إلى الوصول إلى مكتبة الصور الخاصة بك.</string>
+        
 		<key>UIApplicationSupportsTabbedSceneCollection</key>
 		<false/>
 		<key>UIApplicationSupportsMultipleScenes</key>

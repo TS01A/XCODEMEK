@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
+   
+    
     @IBAction func loginPressed(_ sender: Any) {
         
         guard
@@ -90,7 +92,14 @@ class ViewController: UIViewController {
             if user != nil {
                 self.performSegue(withIdentifier: self.loginToList, sender: nil)
             }
+            
         }
     }
+    
+    
+    
+    
+    
+    
     
 }
