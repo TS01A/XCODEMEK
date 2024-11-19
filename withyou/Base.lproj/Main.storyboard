@@ -124,7 +124,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="">
-                                    <backgroundConfiguration key="background" image="BTN1GoToHOSP"/>
+                                    <backgroundConfiguration key="background" cornerRadius="30" image="BTN1GoToHOSP"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="BTNgotomap:" destination="8O2-DY-bRP" eventType="touchUpInside" id="cEI-7v-XqP"/>
