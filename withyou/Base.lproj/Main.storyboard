@@ -121,7 +121,7 @@
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Zk-Cf-S6L">
-                                <rect key="frame" x="79" y="319.66666666666669" width="240" height="128"/>
+                                <rect key="frame" x="49" y="319" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -157,6 +157,39 @@
                                     <action selector="logout:" destination="rn3-XP-X9w" eventType="touchUpInside" id="EBP-U7-Yyi"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم الاخير" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qOD-Qa-dN4">
+                                <rect key="frame" x="244" y="277" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم الاول" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ixz-Xj-OP3">
+                                <rect key="frame" x="244" y="211" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btl-wL-sa9">
+                                <rect key="frame" x="114" y="206" width="111" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="حفظ البيانات"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="rn3-XP-X9w" eventType="touchUpInside" id="Qcs-8x-joU"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zp5-3c-kCj">
+                                <rect key="frame" x="66" y="168" width="75" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="ذكر"/>
+                                    <segment title="أنثى"/>
+                                </segments>
+                            </segmentedControl>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TvC-sc-Wu1">
+                                <rect key="frame" x="38" y="585" width="352" height="37"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m23-NA-rLy"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -166,16 +199,21 @@
                     <navigationItem key="navigationItem" id="4du-sy-bPM"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="copyInstructionLabel" destination="2cy-hM-iIY" id="5Dq-iP-BSP"/>
-                        <outlet property="emailDisplay" destination="4Zk-Cf-S6L" id="WTm-Or-bRv"/>
-                        <outlet property="profileImage" destination="9il-mF-Gkc" id="osc-xh-Hik"/>
-                        <outlet property="titleLabel" destination="aq3-Kq-iwt" id="7aL-T5-FpB"/>
+                        <outlet property="birthday" destination="TvC-sc-Wu1" id="M9T-ag-BFf"/>
+                        <outlet property="copyInstructionLabel" destination="2cy-hM-iIY" id="d8c-9S-0v3"/>
+                        <outlet property="emaildisplay" destination="4Zk-Cf-S6L" id="Or4-Ke-x3H"/>
+                        <outlet property="firstname" destination="Ixz-Xj-OP3" id="WDr-On-P4w"/>
+                        <outlet property="gender" destination="zp5-3c-kCj" id="MaQ-gl-jEx"/>
+                        <outlet property="lastname" destination="qOD-Qa-dN4" id="VgI-c9-gXS"/>
+                        <outlet property="profileImage" destination="9il-mF-Gkc" id="B0Q-P8-Icl"/>
+                        <outlet property="saveButton" destination="Btl-wL-sa9" id="2ui-in-gvZ"/>
+                        <outlet property="titleLabel" destination="aq3-Kq-iwt" id="JKs-WB-eqe"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="toLoginpage" id="eDV-2c-us6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWj-Vf-hQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2477.6119402985073" y="764.75972540045757"/>
+            <point key="canvasLocation" x="2265.6716417910447" y="738.67276887871844"/>
         </scene>
         <!--اقرب عيادة-->
         <scene sceneID="wPQ-so-Ghv">
