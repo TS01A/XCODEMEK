@@ -6,32 +6,44 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewControllerGoogleMap: UIViewController {
+class ViewControllerGoogleMap: UIViewController, CLLocationManagerDelegate {
+
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // طلب إذن للوصول إلى الموقع
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
     }
-    
 
     @IBAction func BTNgotomap(_ sender: Any) {
-        if let url = URL(string: "https://www.google.com/maps/search/عيادة+الصحة+النفسية%E2%80%AD%E2%80%AD/@26.0977891,43.8952698,10.69z?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        // تحقق من صلاحيات الموقع
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
         } else {
-            print("نعتذر لم يتم تحديد الموقع !")
+            print("خدمة الموقع غير مفعلة!")
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // أوقف التحديث بعد الحصول على الموقع
+        locationManager.stopUpdatingLocation()
+        
+        if let currentLocation = locations.last {
+            let latitude = currentLocation.coordinate.latitude
+            let longitude = currentLocation.coordinate.longitude
+            
+            // أنشئ الرابط المخصص باستخدام الموقع الحالي
+            if let url = URL(string: "https://www.google.com/maps/search/عيادة+الصحة+النفسية/@\(latitude),\(longitude),10z") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
     }
-    */
 
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("فشل في تحديد الموقع: \(error.localizedDescription)")
+    }
 }
