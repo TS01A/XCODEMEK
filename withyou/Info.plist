@@ -2,35 +2,42 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>نحتاج إلى الوصول لموقعك لعرض العيادات القريبة</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>يرجى السماح لنا بالوصول إلى موقعك لنظهر لك العيادات القريبة</string>
-	<key>UIApplicationSceneManifest</key>
-	<dict>
-        <key>NSPhotoLibraryUsageDescription</key>
-        <string>نحتاج إلى الوصول إلى مكتبة الصور الخاصة بك.</string>
-        
-		<key>UIApplicationSupportsTabbedSceneCollection</key>
-		<false/>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<true/>
-		<key>UIApplicationPreferredDefaultSceneSessionRole</key>
-		<string>UIWindowSceneSessionRoleApplication</string>
-		<key>UISceneConfigurations</key>
-		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
-			<array>
-				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
-				</dict>
-			</array>
-		</dict>
-	</dict>
+    <!-- إذن الوصول إلى الموقع -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>نحتاج إلى الوصول لموقعك لعرض العيادات القريبة</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>يرجى السماح لنا بالوصول إلى موقعك لنظهر لك العيادات القريبة</string>
+    
+    <!-- إذن الوصول إلى مكتبة الصور -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>نحتاج إلى الوصول إلى مكتبة الصور الخاصة بك لاختيار صورة الملف الشخصي</string>
+
+    <!-- إذن الوصول إلى الكاميرا -->
+    <key>NSCameraUsageDescription</key>
+    <string>نحتاج إلى الوصول إلى الكاميرا لتحديث صورة الملف الشخصي</string>
+
+    <key>UIApplicationSceneManifest</key>
+    <dict>
+        <key>UIApplicationSupportsTabbedSceneCollection</key>
+        <false/>
+        <key>UIApplicationSupportsMultipleScenes</key>
+        <true/>
+        <key>UIApplicationPreferredDefaultSceneSessionRole</key>
+        <string>UIWindowSceneSessionRoleApplication</string>
+        <key>UISceneConfigurations</key>
+        <dict>
+            <key>UIWindowSceneSessionRoleApplication</key>
+            <array>
+                <dict>
+                    <key>UISceneConfigurationName</key>
+                    <string>Default Configuration</string>
+                    <key>UISceneDelegateClassName</key>
+                    <string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+                    <key>UISceneStoryboardFile</key>
+                    <string>Main</string>
+                </dict>
+            </array>
+        </dict>
+    </dict>
 </dict>
 </plist>
