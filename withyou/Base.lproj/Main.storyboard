@@ -450,6 +450,7 @@
                             <constraint firstItem="TDo-mB-4im" firstAttribute="trailing" secondItem="d5b-Ov-OuU" secondAttribute="trailing" constant="20" id="PEd-c0-c4A"/>
                             <constraint firstItem="I9Y-el-ggV" firstAttribute="top" secondItem="xcf-m6-pOI" secondAttribute="bottom" constant="15" id="WlN-HI-KwD"/>
                             <constraint firstItem="xcf-m6-pOI" firstAttribute="trailing" secondItem="72O-os-E3f" secondAttribute="trailing" id="YBY-M7-Rcz"/>
+                            <constraint firstItem="TDo-mB-4im" firstAttribute="trailing" secondItem="d5b-Ov-OuU" secondAttribute="trailing" constant="20" id="bwZ-U9-ljI"/>
                             <constraint firstItem="72O-os-E3f" firstAttribute="top" secondItem="d5b-Ov-OuU" secondAttribute="bottom" constant="8" symbolic="YES" id="dCz-f8-dKQ"/>
                             <constraint firstItem="d5b-Ov-OuU" firstAttribute="leading" secondItem="TDo-mB-4im" secondAttribute="leading" constant="12" id="f7b-po-6mS"/>
                             <constraint firstItem="1ym-KQ-I1J" firstAttribute="top" secondItem="72O-os-E3f" secondAttribute="bottom" constant="8" symbolic="YES" id="gD2-Ef-zVw"/>
@@ -461,10 +462,13 @@
                             <constraint firstItem="d5b-Ov-OuU" firstAttribute="top" secondItem="I9Y-el-ggV" secondAttribute="bottom" constant="8" symbolic="YES" id="mzP-jW-QC6"/>
                             <constraint firstItem="72O-os-E3f" firstAttribute="top" secondItem="d5b-Ov-OuU" secondAttribute="bottom" constant="8" symbolic="YES" id="nCH-Ia-ZOX"/>
                             <constraint firstItem="d5b-Ov-OuU" firstAttribute="top" secondItem="I9Y-el-ggV" secondAttribute="bottom" constant="8" symbolic="YES" id="nbY-eE-Hdu"/>
+                            <constraint firstItem="d5b-Ov-OuU" firstAttribute="leading" secondItem="TDo-mB-4im" secondAttribute="leading" constant="12" id="qeB-RR-E4c"/>
                             <constraint firstItem="xcf-m6-pOI" firstAttribute="leading" secondItem="zdW-YS-YRj" secondAttribute="leading" id="qxt-tx-QGQ"/>
                             <constraint firstItem="TDo-mB-4im" firstAttribute="trailing" secondItem="zdW-YS-YRj" secondAttribute="trailing" constant="16" id="wWc-uZ-RI4"/>
+                            <constraint firstItem="72O-os-E3f" firstAttribute="top" secondItem="d5b-Ov-OuU" secondAttribute="bottom" constant="8" symbolic="YES" id="xLl-fU-oSD"/>
                             <constraint firstItem="zdW-YS-YRj" firstAttribute="leading" secondItem="TDo-mB-4im" secondAttribute="leading" constant="16" id="xbC-AH-Wnn"/>
                             <constraint firstItem="d5b-Ov-OuU" firstAttribute="leading" secondItem="1ym-KQ-I1J" secondAttribute="leading" id="xqI-fw-eTu"/>
+                            <constraint firstItem="d5b-Ov-OuU" firstAttribute="top" secondItem="I9Y-el-ggV" secondAttribute="bottom" constant="8" symbolic="YES" id="ymd-EV-UOI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Sl5-JB-cwp"/>
